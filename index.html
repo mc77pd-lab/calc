@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="intro" id="intro">
+      <div class="system-label">NERV CALCULATION TERMINAL</div>
+      <h1>Ты готов?</h1>
+      <p class="intro__status">SYNCHRONIZATION CHECK</p>
+      <div class="intro__actions">
+        <button class="button button--primary" id="startButton" type="button">Конечно</button>
+        <button class="button button--disabled" type="button" disabled>Нет (не вариант)</button>
+      </div>
+    </section>
+
+    <section class="calculator-screen hidden" id="calculatorScreen">
+      <div class="terminal-strip">EVA-01 // MATH PROTOCOL</div>
+      <div class="calculator is-blurred" id="calculator" aria-label="Калькулятор">
+        <div class="calculator__header">
+          <span>MAGI</span>
+          <span>DIVISION LOCK</span>
+        </div>
+        <output class="calculator__display" id="display">0</output>
+
+        <div class="calculator__keys">
+          <button class="key key--utility" type="button" data-action="clear">C</button>
+          <button class="key key--utility" type="button" data-action="delete">⌫</button>
+          <button class="key key--operator" type="button" data-action="operator" data-operator="%">%</button>
+          <button class="key key--operator" type="button" data-action="operator" data-operator="/">÷</button>
+
+          <button class="key key--number" type="button" data-number="7">7</button>
+          <button class="key key--number" type="button" data-number="8">8</button>
+          <button class="key key--number" type="button" data-number="9">9</button>
+          <button class="key key--operator" type="button" data-action="operator" data-operator="*">×</button>
+
+          <button class="key key--number" type="button" data-number="4">4</button>
+          <button class="key key--number" type="button" data-number="5">5</button>
+          <button class="key key--number" type="button" data-number="6">6</button>
+          <button class="key key--operator" type="button" data-action="operator" data-operator="-">−</button>
+
+          <button class="key key--number" type="button" data-number="1">1</button>
+          <button class="key key--number" type="button" data-number="2">2</button>
+          <button class="key key--number" type="button" data-number="3">3</button>
+          <button class="key key--operator" type="button" data-action="operator" data-operator="+">+</button>
+
+          <button class="key key--number key--wide" type="button" data-number="0">0</button>
+          <button class="key key--number" type="button" data-number=".">.</button>
+          <button class="key key--equals" type="button" data-action="equals">=</button>
+        </div>
+      </div>
+
+      <div class="modal" id="instructionModal" role="dialog" aria-modal="true" aria-labelledby="instructionTitle">
+        <div class="modal__box">
+          <div class="modal__code">ORDER 00</div>
+          <h2 id="instructionTitle">Проведите любую математическую операцию</h2>
+          <button class="button button--primary" id="understoodButton" type="button">Понял-принял</button>
+        </div>
+      </div>
+
+      <div class="warning hidden" id="warning" role="alert">
+        НУ ТЕБЕ ЖЕ ГОВОРИЛИ ЧТО НЕЛЬЗЯ ТАК ДЕЛАТЬ!
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
